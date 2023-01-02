@@ -67,7 +67,7 @@ const shippingAddressesPost = (req, res = response) => {
             xmlString += `<FLD NAME="ADDLIG1">${xmlEscape(shipAdd.shippingStreet)}</FLD>`;
             //xmlString += `<FLD NAME="ADDLIG2">${BPADD[i].ADDLIG2 ?? ''}</FLD>`;
             //xmlString += `<FLD NAME="ADDLIG3">${BPADD[i].ADDLIG3 ?? ''}</FLD>`;
-            xmlString += `<FLD NAME="POSCOD">${shipAdd.shippingPostalCode}</FLD>`;
+            xmlString += `<FLD NAME="POSCOD">${shipAdd.shippingPostalCode.replaceAll('-','')}</FLD>`;
             xmlString += `<FLD NAME="CTY">${shipAdd.shippingCity}</FLD>`;
         xmlString += '</GRP>';
         xmlString += '<GRP ID="BPD2_2">';
